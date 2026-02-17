@@ -1,23 +1,22 @@
 # coding=utf-8
 
-import difflib
-import filecmp
-import os
+import os  # noqa: F401
 import shutil
+import filecmp
+import difflib
 from datetime import datetime
 
 
-def bool_equal_files(file1, file2):    #פונקציה בוליאנית להשוואה בין שתי קבצים
+def bool_equal_files(file1, file2):
+
     return filecmp.cmp(file1, file2)
 
-def merge_files(file1, file2):        #פונקציה שממזגת בין שתי קבצים
-    return filecmp.cmp(file1, file2)
 
-def write_to_id_file_initial(commit_folder_path):
-    with open(os.path.join(commit_folder_path, 'id_file.txt'),'w')as file:
+def write_to_id_file_initial(commit_folder_path, name_file):
+    with open(os.path.join(commit_folder_path, name_file), 'w') as file:
         file.write("1")
 
-def compare_and_update_folders(folder1, folder2):  #פונקציה שמעדכנת תקיה לשמור בה רק מה שאים בתקיה הקודמת
+def compare_and_update_folders(folder1, folder2):
     for filename in os.listdir(folder1):
         file1_path = os.path.join(folder1, filename)
         file2_path = os.path.join(folder2, filename)
@@ -35,19 +34,22 @@ def compare_and_update_folders(folder1, folder2):  #פונקציה שמעדכנ�
             with open(file1_path, 'w') as file1:
                 file1.writelines(updated_lines)
 
+
 def bool_compare_folder(folder1, folder2):
     comparison = filecmp.dircmp(folder1, folder2)
     return not comparison.diff_files and not comparison.left_only and not comparison.right_only
 
 
-def replace_or_add_file(file_path,folder_path):
+def replace_or_add_file(file_path, folder_path):
     file_name = os.path.basename(file_path)
-    target_file_path = os.path.join(folder_path,file_name)
+    target_file_path = os.path.join(folder_path, file_name)
 
     if os.path.exists(target_file_path):
         os.remove(target_file_path)
-    shutil.copy(file_path,folder_path)
-def creat_folder(path,directory_name):
+    shutil.copy(file_path, folder_path)
+
+
+def creat_folder(path, directory_name):
     full_path = os.path.join(path, directory_name)
     try:
         os.makedirs(full_path)
@@ -66,10 +68,12 @@ def remove_content(folder_path):
             else:
                 os.remove(item_path)
 
+
 def is_in_witignor(path, file):
-    wit_ignor_path = os.path.join(path,".witignor.txt")
+    wit_ignor_path = os.path.join(path, ".witignor.txt")
     if not os.path.exists(wit_ignor_path):
-         return f"Warning: {wit_ignor_path} does not exist."
+        return f"Warning: {wit_ignor_path} does not exist."
+
     file_name = os.path.basename(file)
     with open(wit_ignor_path, 'r') as witignore_file:
         for line in witignore_file:
@@ -83,33 +87,33 @@ def copy_to_folder(source, dest):
         result = is_in_witignor(source, item)
         if isinstance(result, str):
             return result
-        else:
-            if os.path.basename(item) != ".wit" and result:
-                path_item = os.path.join(source, item)
-                if os.path.isdir(path_item):
-                    shutil.copytree(path_item, os.path.join(dest, os.path.basename(item)))
-                else:
-                    shutil.copy2(path_item, dest)
+
+        if os.path.basename(item) != ".wit" and result:
+            path_item = os.path.join(source, item)
+            if os.path.isdir(path_item):
+                shutil.copytree(path_item, os.path.join(dest, os.path.basename(item)))
+            else:
+                shutil.copy2(path_item, dest)
 
 
 def copy_from_commit_to_folder(source, dest):
     for item in os.listdir(source):
-           path_item = os.path.join(source,item)
-           if os.path.isdir(path_item):
-               shutil.copytree(path_item, os.path.join(dest,os.path.basename(item)))
-           else:
-               shutil.copy2(path_item, dest)
+        path_item = os.path.join(source, item)
+        if os.path.isdir(path_item):
+            shutil.copytree(path_item, os.path.join(dest, os.path.basename(item)))
+        else:
+            shutil.copy2(path_item, dest)
+
 
 def write_number_to_file(file_path, number):
     with open(file_path, 'w') as file:
         file.write(str(number))
 
+
 def read_line_in_file(path):
     with open(path, 'r') as file1:
         text = file1.readline().strip()
     return text
-
-
 
 
 def get_unique_files(source_folder, target_folder):
@@ -120,31 +124,19 @@ def get_unique_files(source_folder, target_folder):
         target_path = os.path.join(target_folder, item)
 
         if os.path.isdir(source_path):
-            # אם יש תיקיה באותו שם בתיקיית היעד, קרא לפונקציה באופן רקורסיבי
+
             if os.path.isdir(target_path):
                 unique_files.update(get_unique_files(source_path, target_path))
             else:
-                # אם אין תיקיה תואמת, הוסף את כל הקבצים בתיקיה
+
                 unique_files.update(get_unique_files(source_path, ''))
         else:
-            # אם מדובר בקובץ ואין לו תואם בתיקיה השנייה, הוסף את שמו לרשימה
+
             if not os.path.exists(target_path):
-                unique_files.add(item)  # שומר את שם הקובץ בלבד
+                unique_files.add(item)
     unique_files.discard('.wit')
     return list(unique_files)
 
-
-def get_unique_files(source_folder, target_folder):
-    # רשימה של קבצים בתיקיה השנייה
-    target_files = set(os.listdir(target_folder))
-
-    # רשימה של קבצים בתיקיה הראשונה שאין להם תואם בתיקיה השנייה
-    unique_files = [file for file in os.listdir(source_folder) if file not in target_files]
-
-    return unique_files
-
-import os
-import filecmp
 
 def compare_directories(dir1, dir2):
     identical_items = []
@@ -168,7 +160,6 @@ def compare_directories(dir1, dir2):
         else:
             if os.path.isdir(file1_path) and os.path.isdir(file2_path):
                 sub_differing = compare_directories(file1_path, file2_path)
-                # identical_items.extend(sub_identical)
                 differing_items.extend(sub_differing)
 
     return differing_items
@@ -182,12 +173,13 @@ def second_word(s):
     words = s.split()
     return words[1] if len(words) > 1 else None
 
+
 def third_word(s):
     words = s.split()
     return words[2] if len(words) > 2 else None
 
 
-def write_describe(name_folder,num,name_commit):
+def write_describe(name_folder, num, name_commit):
     with open(os.path.join(name_folder, "describe.txt"), 'w') as file2:
         file2.write(name_commit + "\n")
         file2.write(str(datetime.now()) + "\n")
