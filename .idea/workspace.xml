@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5194cd4-53c6-4364-a0a8-6b17c389fa9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FolderAndFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/FolderAndFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/add_step.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout_step.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commit_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/commit_step.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_step.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/status_step.py" beforeDir="false" afterPath="$PROJECT_DIR$/status_step.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/add/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/add/a.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/add/b.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/add/d.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/add/e.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/add/uuu.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/add/‏‏תיקיה חדשה/‏‏תיקיה חדשה/c.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/add/‏‏תיקיה חדשה/‏‏תיקיה חדשה/‏‏גליון עבודה של Microsoft Excel חדש.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/commit/1/describe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/commit/1/describe.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/commit/id_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/בדיקה של הפריקט/.wit/commit/id_file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/בדיקה של הפריקט/a.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/b.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/d.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/e.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/uuu.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/‏‏תיקיה חדשה/‏‏תיקיה חדשה/c.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/בדיקה של הפריקט/‏‏תיקיה חדשה/‏‏תיקיה חדשה/‏‏גליון עבודה של Microsoft Excel חדש.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +155,7 @@
       <workItem from="1771257081337" duration="135000" />
       <workItem from="1771257262547" duration="20038000" />
       <workItem from="1771278488771" duration="2930000" />
-      <workItem from="1771338735590" duration="10181000" />
+      <workItem from="1771338735590" duration="10840000" />
     </task>
     <servers />
   </component>
