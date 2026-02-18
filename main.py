@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import click
+import os
 
 from FolderAndFile import second_word, third_word
 from add_step import add_func
@@ -9,7 +10,7 @@ from commit_step import commit_func
 from init_step import init_func
 from status_step import status_func
 
-REPO_PATH = Path(r'C:\דבורי\שנה ב\פייתון\בדיקה של הפריקט')
+REPO_PATH = os.getcwd()
 
 
 @click.command()

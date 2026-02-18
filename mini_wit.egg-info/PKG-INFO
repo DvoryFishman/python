@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: mini-wit
+Version: 0.1.0
+Summary: WIT - A simple version control system similar to Git
+Author: Student
+Requires-Python: >=3.10
+Requires-Dist: click
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

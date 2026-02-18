@@ -1,0 +1,16 @@
+FolderAndFile.py
+README.md
+add_step.py
+checkout_step.py
+commit_step.py
+init_step.py
+main.py
+setup.py
+status_step.py
+wit.py
+mini_wit.egg-info/PKG-INFO
+mini_wit.egg-info/SOURCES.txt
+mini_wit.egg-info/dependency_links.txt
+mini_wit.egg-info/entry_points.txt
+mini_wit.egg-info/requires.txt
+mini_wit.egg-info/top_level.txt
