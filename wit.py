@@ -11,7 +11,7 @@ from init_step import init_func
 from status_step import status_func
 from pathlib import Path
 
-REPO_PATH = Path(r'C:\דבורי\שנה ב\פייתון\בדיקה של הפריקט')
+REPO_PATH = Path(r'C:\דבורי\שנה ב\פייתון')
 
 
 @click.group()

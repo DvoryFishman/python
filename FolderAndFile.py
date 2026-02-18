@@ -16,6 +16,7 @@ def write_to_id_file_initial(commit_folder_path, name_file):
     with open(os.path.join(commit_folder_path, name_file), 'w') as file:
         file.write("1")
 
+
 def compare_and_update_folders(folder1, folder2):
     for filename in os.listdir(folder1):
         file1_path = os.path.join(folder1, filename)
@@ -148,6 +149,7 @@ def compare_directories(dir1, dir2):
     common_files = files1.intersection(files2)
 
     for file_name in common_files:
+
         file1_path = os.path.join(dir1, file_name)
         file2_path = os.path.join(dir2, file_name)
 
